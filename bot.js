@@ -1,11 +1,10 @@
 const TelegramApi = require('node-telegram-bot-api');
-const {gameOptions, againOptions} = require('/options');
-const token = '7803060278:AAEejU5i2sUwDOQ87pSUJ-Ik23fjgP4zkZA';
+const {gameOptions, againOptions} = require('./options');
+const token = process.env.TOKEN;
 
 const bot = new TelegramApi(token, {polling: true});
 
 const chats = {};
-
 const startGame = async (chatId) => {
     await bot.sendMessage(
         chatId,
